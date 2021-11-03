@@ -40,7 +40,7 @@ public class LibrosEntity implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @GeneratedValue(generator="LIB_SEQ")
-    @SequenceGenerator(name="LIB_SEQ",sequenceName="LIB_SEQ", allocationSize=100)
+    @SequenceGenerator(name="LIB_SEQ",sequenceName="LIB_SEQ", allocationSize=1)
     @Basic(optional = false)
     @NotNull
     @Column(name = "CODIGO_LIBRO", nullable = false, precision = 38, scale = 0)

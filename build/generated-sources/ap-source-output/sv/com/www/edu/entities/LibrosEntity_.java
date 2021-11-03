@@ -8,7 +8,7 @@ import sv.com.www.edu.entities.AutoresEntity;
 import sv.com.www.edu.entities.EditorialesEntity;
 import sv.com.www.edu.entities.GenerosEntity;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2021-11-03T08:06:05")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2021-11-03T16:38:02")
 @StaticMetamodel(LibrosEntity.class)
 public class LibrosEntity_ { 
 

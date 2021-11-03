@@ -37,7 +37,7 @@ public class AutoresEntity implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @GeneratedValue(generator="AUT_SEQ")
-    @SequenceGenerator(name="AUT_SEQ",sequenceName="AUT_SEQ", allocationSize=100)
+    @SequenceGenerator(name="AUT_SEQ",sequenceName="AUT_SEQ", allocationSize=1)
     @Basic(optional = false)
     @NotNull
     @Column(name = "CODIGO_AUTOR", nullable = false, precision = 38, scale = 0)

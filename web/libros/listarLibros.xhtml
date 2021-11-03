@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../index.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <f:view>
+            <h1><h:outputText value="Listar editoriales"/></h1>
+            <p:commandButton
+                value="Nuevo Libro"
+                action="#{libroBean.nuevoLibro()}"
+                />    
+            <p:separator/>
+            <h:form>
+                <p:dataTable value="#{libroBean.listaLibros}" var="libro">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoLibro"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.codigoLibro}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="NombreLibro"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.nombreLibro}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Existencias"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.existencias}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Precio"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.precio}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="DescripcionL"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.descripcionL}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoAutor"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.codigoAutor.nombreAutor}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoEditorial"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.codigoEditorial.nombreEditorial}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoGenero"/>
+                        </f:facet>
+                        <h:outputText value="#{libro.codigoGenero.nombreGenero}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>

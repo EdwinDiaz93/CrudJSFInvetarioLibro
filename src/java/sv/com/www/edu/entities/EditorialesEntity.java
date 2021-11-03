@@ -39,7 +39,7 @@ public class EditorialesEntity implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @GeneratedValue(generator="EDI_SEQ")
-    @SequenceGenerator(name="EDI_SEQ",sequenceName="EDI_SEQ", allocationSize=100)
+    @SequenceGenerator(name="EDI_SEQ",sequenceName="EDI_SEQ", allocationSize=1)
     @Basic(optional = false)
     @NotNull
     @Column(name = "CODIGO_EDITORIAL", nullable = false, precision = 38, scale = 0)

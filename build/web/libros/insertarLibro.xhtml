@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../index.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">                    
+                    <p:outputLabel value="NombreLibro:" for="nombreLibro" />
+                    <p:inputText id="nombreLibro" value="#{libroBean.libro.nombreLibro}" title="NombreLibro" required="true" requiredMessage="The NombreLibro field is required."/>
+                    <p:outputLabel value="Existencias:" for="existencias" />
+                    <p:inputText id="existencias" value="#{libroBean.libro.existencias}" title="Existencias" required="true" requiredMessage="The Existencias field is required."/>
+                    <p:outputLabel value="Precio:" for="precio" />
+                    <p:inputText id="precio" value="#{libroBean.libro.precio}" title="Precio" required="true" requiredMessage="The Precio field is required."/>
+                    <p:outputLabel value="DescripcionL:" for="descripcionL" />
+                    <p:inputText id="descripcionL" value="#{libroBean.libro.descripcionL}" title="DescripcionL" required="true" requiredMessage="The DescripcionL field is required."/>
+                    <p:outputLabel value="CodigoAutor:" for="codigoAutor" />
+                    <p:selectOneMenu style="width: 100%" id="codigoAutor" value="#{libroBean.libro.codigoAutor}" >                        
+                        <f:selectItems 
+                            value="#{libroBean.listaAutores}"
+                            var="autor"
+                            itemLabel="#{autor.nombreAutor}"                            
+                            itemValue="#{autor}"
+                            />
+                    </p:selectOneMenu>
+                    <p:outputLabel value="CodigoEditorial:" for="codigoEditorial" />
+                    <p:selectOneMenu style="width: 100%" id="codigoEditorial" value="#{libroBean.libro.codigoEditorial}" >
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems 
+                            value="#{libroBean.listaEditoriales}"
+                            var="editorial"
+                            itemLabel="#{editorial.nombreEditorial}"                            
+                            itemValue="#{editorial}"
+                            />
+                    </p:selectOneMenu>
+                    <p:outputLabel value="CodigoGenero:" for="codigoGenero" />
+                    <p:selectOneMenu style="width: 100%" id="codigoGenero" value="#{libroBean.libro.codigoGenero}" >
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems 
+                            value="#{libroBean.listaGeneros}"
+                            var="genero"
+                            itemLabel="#{genero.nombreGenero}"                            
+                            itemValue="#{genero}"
+                            />
+                    </p:selectOneMenu>
+                    <p:outputLabel/>
+                    <p:commandButton
+                        value="Guardar"
+                        action="#{libroBean.insertarLibro()}"
+                        />
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>

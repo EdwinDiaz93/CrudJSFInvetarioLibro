@@ -38,7 +38,7 @@ public class GenerosEntity implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
     @GeneratedValue(generator="GEN_SEQ")
-    @SequenceGenerator(name="GEN_SEQ",sequenceName="GEN_SEQ", allocationSize=100)
+    @SequenceGenerator(name="GEN_SEQ",sequenceName="GEN_SEQ", allocationSize=1)
     @Basic(optional = false)
     @NotNull
     @Column(name = "CODIGO_GENERO", nullable = false, precision = 38, scale = 0)
