@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../index.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+                    <h1><h:outputText value="Lista de generos"/></h1>
+                    <p:commandButton
+                        value="Nuevo Genero"
+                        action="#{generoBean.nuevoGenero()}"
+                        />
+                    <p:separator/>
+                    <h:form>
+                        
+                        <p:dataTable id="generoTable" value="#{generoBean.listaGeneros}" var="genero">                      
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="NombreGenero"/>
+                                </f:facet>
+                                <h:outputText value="#{genero.nombreGenero}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="DescripcionGenero"/>
+                                </f:facet>
+                                <h:outputText value="#{genero.descripcionGenero}"/>
+                            </p:column>
+                            <p:column>
+                                
+                                <p:commandButton
+                                    value="Modificar"
+                                    action="#{generoBean.editarGenero()}"
+                                    >
+                                    <f:param
+                                        name="codigo"
+                                        value="#{genero.codigoGenero}"
+                                        />
+                                </p:commandButton>
+                                <p:commandButton
+                                    value="Eliminar"
+                                    actionListener="#{generoBean.eliminarGenero()}"
+                                    update="generoTable"
+                                    >
+                                    <f:param
+                                        name="codigo"
+                                        value="#{genero.codigoGenero}"
+                                        />
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

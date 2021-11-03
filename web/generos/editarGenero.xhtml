@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../index.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content">
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Editar Genero"/></h1>
+                <p:panelGrid style="width:100%" columns="2">                    
+                    <p:outputLabel value="NombreGenero:" for="nombreGenero" />
+                    <p:inputText style="width:100%" id="nombreGenero" value="#{generoBean.genero.nombreGenero}" title="NombreGenero" required="true" requiredMessage="The NombreGenero field is required."/>
+                    <p:outputLabel value="DescripcionGenero:" for="descripcionGenero" />
+                    <p:inputText style="width:100%" id="descripcionGenero" value="#{generoBean.genero.descripcionGenero}" title="DescripcionGenero" required="true" requiredMessage="The DescripcionGenero field is required."/>
+                    <p:outputLabel/>
+                    <p:commandButton
+                        value="Guardar"
+                        action="#{generoBean.modificarGenero()}"
+                        />
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../index.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Crear autor"/></h1>
+                <p:panelGrid style="width: 100%" columns="2">                   
+                    <p:outputLabel value="NombreAutor:" for="nombreAutor" />
+                    <p:inputText style="width: 100%" id="nombreAutor" value="#{autorBean.autor.nombreAutor}" title="NombreAutor" required="true" requiredMessage="The NombreAutor field is required."/>
+                    <p:outputLabel value="Nacionalidad:" for="nacionalidad" />
+                    <p:inputText style="width: 100%" id="nacionalidad" value="#{autorBean.autor.nacionalidad}" title="Nacionalidad" required="true" requiredMessage="The Nacionalidad field is required."/>
+                    <p:outputLabel/>
+                    <p:commandButton
+                        value="Guardar"
+                        action="#{autorBean.insertarAutor()}"
+                        />
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>

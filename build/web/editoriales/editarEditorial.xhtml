@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../index.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="content">
+         <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Editar Editorial"/></h1>
+                <p:panelGrid style="width: 100%" columns="2">                    
+                    <p:outputLabel  value="NombreEditorial:" for="nombreEditorial" />
+                    <p:inputText style="width: 100%" id="nombreEditorial" value="#{editorialBean.editorial.nombreEditorial}" title="NombreEditorial" required="true" requiredMessage="The NombreEditorial field is required."/>
+                    <p:outputLabel value="Contacto:" for="contacto" />
+                    <p:inputText style="width: 100%" id="contacto" value="#{editorialBean.editorial.contacto}" title="Contacto" required="true" requiredMessage="The Contacto field is required."/>
+                    <p:outputLabel value="Telefono:" for="telefono" />
+                    <p:inputText style="width: 100%" id="telefono" value="#{editorialBean.editorial.telefono}" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+                    <p:outputLabel/>
+                    <p:commandButton
+                        value="Guardar"
+                        action="#{editorialBean.modificarEditorial()}"
+                        />
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+
+    </ui:define>
+
+</ui:composition>
